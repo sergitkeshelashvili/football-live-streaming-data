@@ -1,7 +1,8 @@
 # football-live-streaming-data
 A real-time football event streaming pipeline built to demonstrate modern data engineering and Lakehouse architecture patterns.
 
-!data_workflow_diagram](./docs/dataflow_diagram.png)
+![Data Workflow Diagram](./docs/dataflow_diagram.png)
+
 
 FastAPI → Kafka (3 brokers) → NiFi → PostgreSQL (Master & Replica) → Spark (Bronze–Silver–Gold)
 
