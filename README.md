@@ -7,15 +7,15 @@ FastAPI → Kafka (3 brokers) → NiFi → PostgreSQL (Master & Replica) → Spa
 
 🚀 Overview
 
-FastAPI simulates live football match events
+· FastAPI simulates live football match events
 
-Kafka streams events at high throughput
+· Kafka streams events at high throughput
 
-NiFi ingests and loads data into PostgreSQL
+· NiFi ingests and loads data into PostgreSQL
 
-PostgreSQL stores raw and replicated data
+· PostgreSQL stores raw and replicated data
 
-Spark processes data using the Medallion architecture
+· PostgreSQL processes data using the Medallion architecture
 
 🛠 Tech Stack
 
