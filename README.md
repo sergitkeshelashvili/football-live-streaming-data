@@ -2,8 +2,7 @@
 
 A real-time football event streaming pipeline showcasing modern data engineering, stream processing, and Medallion (Lakehouse) architecture.
 
-FastAPI → Kafka (3 brokers) → NiFi → PostgreSQL (Master & Replica) → Spark (Bronze–Silver–Gold)
-PySpark ETL orchestrated with Apache Airflow
+FastAPI → Kafka (3 brokers) → NiFi → PostgreSQL (Master & Replica) → Airflow & Spark ELT (Bronze–Silver–Gold)
 
 # 📊 Architecture Overview
 
