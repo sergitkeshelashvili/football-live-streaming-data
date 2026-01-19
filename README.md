@@ -4,54 +4,49 @@ A real-time football event streaming pipeline showcasing modern data engineering
 
 FastAPI → Kafka (3 brokers) → NiFi → PostgreSQL (Master & Replica) → Airflow & Spark ELT (Bronze–Silver–Gold)
 
-# 📊 Architecture Overview
+## 📊 Architecture & Data Flow
 
 ![Data Workflow Diagram](docs/data_workflow_diagram.png) 
 
-FastAPI simulates live football events
+- **FastAPI** generates simulated live football match events
+- **Kafka** provides high-throughput, fault-tolerant event streaming
+- **Apache NiFi** consumes Kafka topics and persists raw events
+- **PostgreSQL** stores event logs and curated analytics tables
+- **Apache Spark (PySpark)** processes data using the Medallion architecture
+- **Apache Airflow** orchestrates, schedules, and monitors Spark ETL jobs
 
-Kafka streams events at high throughput
+---
 
-NiFi consumes Kafka and writes raw events to PostgreSQL
+## 🧱 Medallion Architecture
 
-PostgreSQL stores event logs and analytics tables
+- **Bronze** – Immutable raw event ingestion from `event_logs`
+- **Silver** – Cleaned, validated, and deduplicated events
+- **Gold** – Business-ready aggregates (goals, fouls, shots per team)
 
-Spark (PySpark) processes data into Bronze, Silver, and Gold layers
+---
 
-Airflow schedules and monitors the Spark ETL job
+## 🛠 Technology Stack
 
-# 🧱 Medallion Architecture
+FastAPI · Kafka · Apache NiFi · PostgreSQL · Apache Spark · Apache Airflow · Python · SQL
 
-Bronze – Raw event capture from event_logs
+---
 
-Silver – Cleaned and deduplicated events
+## ⏱ ETL & Orchestration
 
-Gold – Aggregated team statistics (goals, fouls, shots)
+- Streaming events first land in PostgreSQL event log tables
+- PySpark ETL transforms data across **Bronze → Silver → Gold** layers
+- Apache Airflow manages scheduling, retries, and observability
+- JDBC-based reads and writes ensure reliable batch processing
 
-🛠 Tech Stack
+---
 
-FastAPI · Kafka · NiFi · PostgreSQL · Spark · Airflow · Python · SQL
+## 🎯 Project Goal
 
-# ⏱ ETL & Orchestration
+A portfolio-grade data engineering project demonstrating:
 
-Raw events are first written to PostgreSQL event log tables
+- Real-time streaming architectures
+- Scalable and reliable data ingestion
+- Lakehouse / Medallion design patterns
+- Spark + Airflow production workflows
+- Sports analytics use cases
 
-PySpark ETL transforms data across Bronze → Silver → Gold
-
-Apache Airflow orchestrates and schedules the ETL pipeline
-
-JDBC-based reads/writes ensure reliable batch processing
-
-# 🎯 Purpose
-
-A portfolio-grade project demonstrating:
-
-Real-time streaming pipelines
-
-Scalable data ingestion
-
-Medallion architecture implementation
-
-Spark + Airflow production patterns
-
-Sports analytics use cases
