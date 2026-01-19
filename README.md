@@ -3,7 +3,7 @@ A real-time football event streaming pipeline built to demonstrate modern data e
 
 FastAPI → Kafka (3 brokers) → NiFi → PostgreSQL (Master & Replica) → Spark (Bronze–Silver–Gold)
 
-![Data Workflow Diagram](./docs/dataflow_diagram.png)
+![Data Workflow Diagram](.docs/data_workflow_diagram.png)
 
 🚀 Overview
 
