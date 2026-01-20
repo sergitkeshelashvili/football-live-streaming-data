@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
 
-# Correct paths for your WSL environment
+
 VENV_PYTHON = "/home/sergi/airflow/airflow_venv/bin/python"
 SPARK_SCRIPT = "/mnt/c/Users/sergi/OneDrive/Desktop/python_spark/football_etl.py"
 
@@ -20,7 +20,7 @@ with DAG(
     description='Run Spark ETL from Airflow every minute',
     schedule_interval='* * * * *',  # Every 1 minute
     catchup=False,
-    max_active_runs=1,              # Prevents multiple Spark jobs from overlapping
+    max_active_runs=1,     
     tags=['spark', 'football']
 ) as dag:
 
